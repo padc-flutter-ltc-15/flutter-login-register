@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutterloginscreen/widgets/textInputWidget.dart';
+import 'package:flutterloginscreen/widgets/whiteTextInputWidget.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -14,7 +13,15 @@ class SignUpScreen extends StatelessWidget {
           child: logoImage,
         ),
         backgroundColor: blackColor,
-        leading: leadingIcon,
+        //leading: leadingIcon,
+        leading: const Center(
+            child: Text(
+          'Back',
+          style: TextStyle(
+              fontSize: 16,
+              color: Colors.blue,
+          ),
+        )),
         actions: tailingIcons,
       ),
       body: Container(
@@ -65,11 +72,19 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
+            blahBlahText,
+            const SizedBox(
+              height: 8,
+            ),
             alreadyHaveAnAccount,
             const SizedBox(
               height: 8,
             ),
             signInButton,
+            const SizedBox(
+              height: 32,
+            ),
+            copyRightText,
           ],
         ),
       ),
@@ -122,6 +137,28 @@ Align warningText = Align(
   ),
 );
 
+Align blahBlahText = const Align(
+  alignment: AlignmentDirectional.topStart,
+  child: Text(
+    "By creating an account, you agree to the Prime Video Terms of Use and license agreements which can be found on the Amazon website",
+    style: TextStyle(
+      color: Colors.grey,
+      fontSize: 14,
+    ),
+  ),
+);
+
+Align copyRightText = const Align(
+  alignment: AlignmentDirectional.center,
+  child: Text(
+    "Amazon.com Inc",
+    style: TextStyle(
+      color: Colors.grey,
+      fontSize: 14,
+    ),
+  ),
+);
+
 Align alreadyHaveAnAccount = const Align(
   alignment: AlignmentDirectional.center,
   child: Text(
@@ -145,11 +182,11 @@ SizedBox signInButton = SizedBox(
           timeInSecForIosWeb: 1,
           backgroundColor: Colors.green,
           textColor: Colors.black,
-          fontSize: 16.0
-      );
+          fontSize: 16.0);
     },
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(69, 81, 99, 1.0)),
+      backgroundColor:
+          MaterialStateProperty.all(const Color.fromRGBO(69, 81, 99, 1.0)),
     ),
     child: const Text(
       "Sign-In now",
@@ -173,8 +210,7 @@ SizedBox createAccountButton = SizedBox(
           timeInSecForIosWeb: 1,
           backgroundColor: Colors.blue,
           textColor: Colors.black,
-          fontSize: 16.0
-      );
+          fontSize: 16.0);
     },
     style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(Colors.blue),
